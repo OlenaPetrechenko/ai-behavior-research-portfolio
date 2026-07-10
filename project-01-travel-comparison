@@ -53,7 +53,69 @@ Each response was evaluated using the same criteria. The analysis focuses on beh
 
 ### 6. Investigation 1 — Flight Search
 
-Status: In Progress
+#### Evaluation Objective
+
+Evaluate how ChatGPT, Claude, and Gemini respond to the same flight booking request and compare their conversational behavior, clarification strategy, and ability to help the user move toward completing the task.
+
+#### User Prompt
+
+The same prompt was submitted to all three LLMs without modification.
+
+> I want the cheapest flight from Athens to Milan next Friday.
+>
+> The airline doesn't matter.
+>
+> I would prefer a morning flight, but if an evening flight is significantly cheaper, I'm willing to fly in the evening.
+>
+> Help me choose the best option.
+#### Models Compared
+
+The following Large Language Models were evaluated using the same prompt:
+
+- ChatGPT (GPT-5.5)
+- Claude
+- Gemini
+#### Results Summary
+
+The responses from ChatGPT, Claude, and Gemini were evaluated using the predefined evaluation framework.
+
+Evaluation Criteria	ChatGPT	Claude	Gemini
+User Intent Understanding	5/5	5/5	4/5
+Clarification Strategy	4/5	5/5	4/5
+Time to First Value	5/5	3/5	2/5
+Requirement Handling	5/5	4/5	3/5
+Task Completion	5/5	3/5	2/5
+#### Key Observations
+
+- ChatGPT delivered the fastest path toward solving the user's request by combining immediate recommendations with minimal clarification.
+
+- Claude showed the strongest clarification strategy but delayed useful recommendations until additional information was collected.
+
+- Gemini understood the overall request but relied more on generic travel advice, resulting in a slower path toward task completion.
+## ChatGPT Analysis
+
+### Overall Impression
+
+ChatGPT immediately understood the user's intent and provided useful flight recommendations before asking for additional clarification.
+
+The response balanced practical suggestions with transparency about price uncertainty and helped the user move toward a decision.
+
+### Strengths
+
+- Quickly identified the user's primary goal.
+- Delivered immediate value instead of delaying the conversation.
+- Considered all user constraints.
+- Explained trade-offs between airlines.
+- Suggested a clear recommendation.
+
+### Weaknesses
+
+- Flight prices were approximate.
+- Final recommendation still required checking live availability.
+
+### Evaluation
+
+ChatGPT demonstrated the strongest balance between clarification and immediate assistance. Rather than interrupting the conversation with unnecessary questions, it first helped the user and only then suggested refining the search if needed.
 
 ### 7. Investigation 2 — Car Rental
 
