@@ -1,0 +1,23 @@
+Recommendations for LLM Development
+
+The analysis of both Flight Search and Car Rental scenarios suggests several recommendations for improving AI assistants designed for real-world decision support.
+
+1. Deliver useful information before requesting unnecessary clarification.
+
+Whenever possible, the assistant should provide preliminary recommendations while collecting missing information. Early value improves user confidence and keeps the conversation productive.
+
+2. Ask only the clarification questions that directly affect the recommendation.
+
+Clarification should reduce uncertainty rather than interrupt the user's progress. Asking too many questions before providing assistance increases conversation friction.
+
+3. Prioritize task completion over generic educational content.
+
+Users usually seek help completing a task, not reading general information. Practical recommendations should take priority over background explanations.
+
+4. Combine transparency with actionable guidance.
+
+When information is uncertain or unavailable, the assistant should explain the limitation while still offering the best available recommendation instead of stopping the conversation.
+
+5. Adapt recommendations to the user's stated constraints.
+
+Budget, timing, location, and personal preferences should remain central throughout the conversation. Strong assistants continuously align their responses with these constraints.
