@@ -1,0 +1,9 @@
+Reflection
+
+This project helped me better understand how conversational design influences user experience when interacting with Large Language Models.
+
+Although the three models often understood the same user request, their conversational strategies differed significantly. The quality of the interaction depended not only on factual accuracy but also on how quickly the model provided useful information, how efficiently it asked clarification questions, and how effectively it guided the user toward completing the task.
+
+One of the most important observations was that immediate practical assistance generally creates a better user experience than delaying recommendations until every missing detail has been collected.
+
+This research also demonstrated that evaluating AI assistants requires looking beyond correctness alone. User intent understanding, conversation flow, decision support, and overall task completion are equally important factors when assessing the quality of an AI system.
