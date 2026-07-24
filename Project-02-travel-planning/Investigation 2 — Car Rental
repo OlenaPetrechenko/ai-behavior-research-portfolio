@@ -1,0 +1,178 @@
+# 7. Investigation 2 — Car Rental
+
+## Evaluation Objective
+
+Evaluate how ChatGPT, Claude, and Gemini assist a user searching for a rental car under specific budget and vehicle requirements.
+
+The comparison focuses on how effectively each model understands the user's intent, asks clarification questions, provides useful recommendations, and helps the user move toward booking a vehicle.
+
+---
+
+## User Prompt
+
+The same prompt was submitted to all three LLMs without modification.
+
+> I want to rent a car for the weekend.
+>
+> Automatic transmission preferred.
+>
+> Budget up to €80 per day.
+>
+> Help me choose the best option.
+
+---
+
+## Models Compared
+
+The following Large Language Models were evaluated using the same prompt:
+
+- ChatGPT (GPT-5.5)
+- Claude
+- Gemini
+
+---
+
+## Results Summary
+
+The responses from ChatGPT, Claude, and Gemini were evaluated using the predefined evaluation framework.
+
+| Evaluation Criteria | ChatGPT | Claude | Gemini |
+|---------------------|:-------:|:------:|:------:|
+| User Intent Understanding | 5/5 | 5/5 | 4/5 |
+| Clarification Strategy | 5/5 | 5/5 | 3/5 |
+| Time to First Value | 5/5 | 4/5 | 2/5 |
+| Requirement Handling | 5/5 | 4/5 | 3/5 |
+| Task Completion | 5/5 | 3/5 | 2/5 |
+
+---
+
+## Key Observations
+
+- ChatGPT immediately suggested several rental companies, explained why they were recommended, highlighted important booking criteria, and only then asked for the pickup location and rental dates.
+
+- Claude first identified that the location was missing and asked the user to select a city before making recommendations.
+
+- Gemini provided general advice about renting a car but did not recommend specific rental companies or help the user move toward a concrete booking decision.
+
+---
+
+# ChatGPT Analysis
+
+## Overall Impression
+
+ChatGPT provided immediate practical assistance by recommending several rental companies, explaining their advantages, and highlighting important booking considerations before requesting additional information.
+
+### Strengths
+
+- Understood the user's intent immediately.
+- Recommended specific rental companies.
+- Explained why each option was suitable.
+- Highlighted insurance, mileage, deposit, and fuel policy.
+- Requested only the additional information needed to refine the search.
+
+### Weaknesses
+
+- Final recommendations still depended on the pickup location and rental dates.
+
+### Evaluation
+
+ChatGPT demonstrated the strongest balance between immediate assistance and clarification. The user received useful recommendations within the first response while still being guided toward providing the remaining information.
+
+---
+
+# Claude Analysis
+
+## Overall Impression
+
+Claude correctly recognized that an important piece of information was missing before recommending rental options. It requested the pickup location using a simple and user-friendly interaction.
+
+### Strengths
+
+- Correctly identified missing context.
+- Asked a relevant clarification question.
+- Used a clear and structured conversation flow.
+- Avoided making unsupported assumptions.
+
+### Weaknesses
+
+- Did not provide preliminary rental recommendations.
+- Delayed useful information until clarification was completed.
+
+### Evaluation
+
+Claude demonstrated an excellent clarification strategy but postponed helping the user until additional information was collected.
+
+---
+
+# Gemini Analysis
+
+## Overall Impression
+
+Gemini understood the general topic of car rental but responded with generic booking advice instead of helping the user select a rental option.
+
+### Strengths
+
+- Provided useful educational information.
+- Explained common rental conditions.
+- Mentioned comparison websites.
+
+### Weaknesses
+
+- Did not recommend specific rental companies.
+- Did not ask enough clarification questions.
+- Did not move the conversation toward completing the booking.
+
+### Evaluation
+
+Gemini focused on general travel advice rather than solving the user's immediate task. Although the information was accurate, it provided the lowest practical value among the three models.
+
+---
+
+# Comparative Analysis
+
+## Overall Ranking
+
+| Model | Overall Assessment |
+|-------|--------------------|
+| 🥇 ChatGPT | Best balance between recommendations and clarification |
+| 🥈 Claude | Best clarification strategy but slower task progression |
+| 🥉 Gemini | Useful educational guidance but weakest task completion |
+
+## Main Findings
+
+- ChatGPT combined useful recommendations with appropriate clarification, allowing the user to make immediate progress.
+- Claude minimized assumptions by collecting missing information before providing recommendations.
+- Gemini emphasized general guidance instead of helping the user choose a concrete rental option.
+
+Overall, ChatGPT delivered the strongest user experience by balancing practical recommendations with efficient conversation management.
+# 8. Behavioral Insights
+
+The comparison of ChatGPT, Claude, and Gemini across the Flight Search and Car Rental scenarios revealed several recurring behavioral patterns.
+
+## 1. Users expect immediate progress toward their goal.
+
+The strongest responses provided useful recommendations before requesting additional information. Immediate value increased user confidence and reduced conversation friction.
+
+---
+
+## 2. Clarification questions improve quality only when they are necessary.
+
+Asking for missing information is important, but excessive clarification before offering any useful guidance slows down the interaction and reduces user satisfaction.
+
+---
+
+## 3. Generic advice is less valuable than task-oriented assistance.
+
+Providing educational information or listing general websites does not necessarily help users complete their task. Users benefit more from concrete recommendations that move them toward a decision.
+
+---
+
+## 4. Understanding user intent is more important than factual completeness.
+
+Even factually correct responses may feel unhelpful if the model fails to address the user's primary objective.
+
+---
+
+## 5. Effective AI assistants balance confidence with transparency.
+
+The strongest conversations combined practical recommendations with clear communication about limitations instead of refusing to help or delaying assistance.
