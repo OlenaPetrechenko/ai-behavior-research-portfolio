@@ -1,6 +1,6 @@
 # Project 04
 
-# Comparative Evaluation of LLMs on Product Discovery and Root Cause Analysis Tasks
+# Reasoning Strategies of Large Language Models During Product Discovery
 
 ---
 
@@ -1201,3 +1201,46 @@ Meaningful evaluation should also consider:
 These characteristics determine how effectively an AI system can assist product teams when investigating complex business problems with incomplete information.
 
 Ultimately, this investigation shows that Large Language Models can serve as valuable partners in product discovery, provided their reasoning processes are understood, critically evaluated, and applied appropriately to the business context.
+
+
+17 Researcher's Reflection
+What surprised me most
+
+Although all three models received exactly the same prompt, they did not simply produce different answers.
+
+They approached the investigation using fundamentally different reasoning strategies.
+
+The differences were not primarily caused by knowledge.
+
+They were caused by how each model chose to reason.
+
+Most important observation
+
+The investigation suggests that evaluating Large Language Models should not focus only on answer quality.
+
+It should also examine:
+
+how the model frames ambiguity;
+how it manages uncertainty;
+how it prioritizes evidence;
+how quickly it commits to a hypothesis.
+
+These reasoning behaviors directly influence the quality of business decision support.
+
+What I would investigate next
+
+This project compared the initial reasoning process of three models.
+
+Future investigations could explore:
+
+how follow-up prompts change reasoning quality;
+how models revise hypotheses after receiving new evidence;
+whether different prompt structures reduce confirmation bias;
+whether reasoning quality remains stable across different business domains.
+Personal Research Insight
+
+One of the most interesting findings was that reasoning style appears to be more stable than answer content.
+
+Even when solving the same problem, each model consistently demonstrated its own decision-making pattern.
+
+This suggests that future AI evaluation should measure reasoning behavior, not only response quality.
