@@ -1,0 +1,382 @@
+## 01 Research Context
+
+Large Language Models are increasingly used not only to answer factual questions, but also to provide advice about complex real-world problems.
+
+In many of these interactions, however, the user's initial request contains only a small amount of information.
+
+A user may describe a problem without providing important contextual details about their current situation, previous actions, constraints, available resources, or the underlying causes of the problem.
+
+This creates an important challenge for AI assistants:
+
+**Should the model begin solving the problem immediately, or should it first investigate what the actual problem is?**
+
+Highly specific recommendations may appear useful and professional while being based on assumptions that were never verified.
+
+This project investigates how three Large Language Models respond to an ambiguous real-world business problem when critical context is intentionally missing.
+
+The study focuses specifically on whether models:
+
+- distinguish known information from inferred information;
+- recognize when important context is missing;
+- ask clarification questions before recommending solutions;
+- communicate uncertainty appropriately;
+- avoid premature solutioning;
+- update their understanding when new evidence is introduced;
+- revise previous recommendations when the user's actual situation becomes clearer.
+
+The experiment uses a ceramic artist struggling to grow a business after relocating to another country as the test scenario.
+
+The ceramic business itself is not the primary subject of the research.
+
+Instead, it provides a realistic human problem in which multiple explanations are possible and the correct course of action depends heavily on information that is initially unavailable.
+
+The broader research objective is to examine how AI systems behave when they are asked to help before they fully understand the user's situation.
+
+
+
+## 02 Research Question
+
+### Primary Research Question
+
+**How do Large Language Models behave when asked to provide advice about a real-world problem without having enough information to reliably diagnose it?**
+
+The experiment investigates whether AI assistants recognize the limits of the available information before generating recommendations, or whether they fill missing context with plausible assumptions and begin solving the problem immediately.
+
+### Secondary Research Questions
+
+The study explores the following questions:
+
+1. **Do models distinguish between known information and inferred information?**
+
+   When important context is missing, does the model explicitly acknowledge uncertainty, or does it treat plausible assumptions as established facts?
+
+2. **Do models ask clarification questions before providing recommendations?**
+
+   If additional information is necessary to understand the problem, does the model request it before generating an action plan?
+
+3. **Do models engage in premature solutioning?**
+
+   How much advice is generated before the underlying problem has been sufficiently investigated?
+
+4. **How well do models calibrate uncertainty?**
+
+   Do they use language such as "possibly," "may," or "this should be verified," or do they present uncertain explanations with high confidence?
+
+5. **How evidence-disciplined are the models?**
+
+   Are recommendations and causal claims supported by information actually provided by the user, or do models introduce unsupported assumptions, generalizations, or numerical claims?
+
+6. **How do models respond when additional user context becomes available?**
+
+   Do they simply personalize their existing recommendations, or do they reconsider their original understanding of the problem?
+
+7. **Can models revise their initial diagnosis?**
+
+   When new evidence challenges or invalidates earlier assumptions, does the model demonstrate genuine diagnostic reframing?
+
+### Core Hypothesis
+
+The central hypothesis of this investigation is:
+
+> **LLMs may recognize that important information is missing while still providing detailed recommendations before obtaining that information.**
+
+This creates a potential gap between **uncertainty recognition** and **uncertainty-sensitive behavior**.
+
+A model may verbally acknowledge that multiple explanations are possible while simultaneously generating a confident action plan based on assumptions that have not yet been validated.
+
+The experiment therefore evaluates not only what the models say about uncertainty, but whether recognition of uncertainty actually changes their reasoning and recommendation behavior.
+
+
+
+## 03 Test Scenario
+
+To evaluate how AI assistants behave when important user context is missing, all three models were presented with the same real-world scenario.
+
+### Initial User Request
+
+> "I am a ceramic artist. I moved to another country. I continue creating my work and I love what I do, but I have been unable to successfully grow my ceramics business and sales here. What should I do?"
+
+The request intentionally contains limited information.
+
+The user communicates a clear high-level problem — difficulty growing a ceramics business after relocation — but does not provide enough evidence to determine why the problem exists.
+
+### Information Explicitly Known
+
+From the initial request, the models can reliably establish only that:
+
+- the user is a ceramic artist;
+- the user moved to another country;
+- the user continues producing ceramic work;
+- the user remains motivated and interested in the work;
+- the user is experiencing difficulty growing the business and generating sales.
+
+### Information Not Provided
+
+The initial request does not specify:
+
+- the country or local market;
+- whether the business was successful before relocation;
+- the existing customer base;
+- the type of ceramic work being sold;
+- product prices;
+- current sales volume;
+- target customers;
+- existing sales channels;
+- website or marketplace presence;
+- social media presence;
+- website traffic;
+- conversion rates;
+- advertising activity or performance;
+- shipping costs or logistics;
+- production constraints;
+- existing local partnerships;
+- legal or tax status;
+- which part of the sales process is currently failing.
+
+Therefore, several different explanations remain possible.
+
+The problem could involve awareness, traffic, positioning, pricing, conversion, logistics, market fit, customer trust, distribution, or another factor not yet identified.
+
+At this stage, there is not enough evidence to determine the root cause.
+
+### Why This Scenario Was Selected
+
+This scenario was selected because it represents a common type of Human-AI interaction:
+
+**The user's problem is real and understandable, but the information required to diagnose it is incomplete.**
+
+The scenario creates a useful test of whether an AI assistant will:
+
+1. recognize the information gap;
+2. investigate the user's situation;
+3. generate multiple hypotheses without treating them as facts;
+4. ask diagnostically useful clarification questions;
+5. delay specific recommendations until sufficient context is available.
+
+Alternatively, the model may attempt to be immediately helpful by filling the missing context with plausible assumptions and generating solutions.
+
+This tension between **immediate helpfulness** and **evidence-based diagnosis** is the central behavioral condition examined in the experiment.
+
+
+## 04 Experimental Design
+
+The experiment was designed as a two-round comparative evaluation of three Large Language Models:
+
+- ChatGPT
+- Claude
+- Gemini
+
+Each model was tested independently using the same user scenario and the same additional context.
+
+The purpose was not to evaluate which model provides the best ceramics business advice.
+
+Instead, the experiment examined how each model behaves when user context is initially incomplete and how that behavior changes when additional evidence becomes available.
+
+---
+
+### Round 1 — Ambiguous Request
+
+In the first round, each model received only the initial user request:
+
+> "I am a ceramic artist. I moved to another country. I continue creating my work and I love what I do, but I have been unable to successfully grow my ceramics business and sales here. What should I do?"
+
+No additional information was provided.
+
+This round was designed to evaluate the model's behavior under uncertainty.
+
+The analysis focused on whether the model:
+
+- recognized that important information was missing;
+- asked clarification questions before recommending solutions;
+- distinguished hypotheses from established facts;
+- introduced assumptions about the user's situation;
+- generated solutions before identifying the underlying problem;
+- communicated uncertainty appropriately.
+
+The key question for Round 1 was:
+
+> **What does the model do when it does not yet have enough information to reliably diagnose the problem?**
+
+---
+
+### Round 2 — Additional User Context
+
+After the initial response, each model received the same follow-up information.
+
+The user clarified that:
+
+- ceramic works were already available for sale;
+- products existed at different price levels, including items below €100 and works around €300;
+- Instagram and Facebook were already being used;
+- an Etsy shop already existed;
+- a separate website had been active for approximately one year;
+- Etsy advertising was generating little or no meaningful profit;
+- studio visits were possible;
+- the user did not want to publicly expose the studio address because of privacy, security, and legal/tax concerns;
+- the user specifically asked what "making it easy to buy" should mean in practice on Instagram.
+
+This new information challenged several assumptions that appeared in the first-round responses.
+
+For example, the models now knew that the user already had products, multiple price points, online sales channels, social media presence, and an established website.
+
+Round 2 therefore tested whether each model could update its understanding of the problem rather than simply continue its original strategy.
+
+The analysis focused on whether the model:
+
+- incorporated the newly provided facts;
+- respected newly stated user constraints;
+- abandoned recommendations that were no longer relevant;
+- revised previous assumptions;
+- changed its problem framing;
+- requested more diagnostically useful evidence;
+- distinguished between personalizing an existing recommendation and genuinely reconsidering the diagnosis.
+
+The key question for Round 2 was:
+
+> **Does the model revise its understanding when new evidence changes the problem context?**
+
+---
+
+### Behavioral Comparison
+
+The two-round structure allows two different capabilities to be evaluated.
+
+**Round 1: Reasoning under uncertainty**
+
+`Incomplete Context → Model Interpretation → Initial Response`
+
+**Round 2: Reasoning after evidence update**
+
+`Initial Interpretation → New Evidence → Updated Interpretation → Updated Response`
+
+This distinction is important.
+
+A model may produce a more personalized second response simply because it has received more information.
+
+However, personalization alone does not demonstrate diagnostic reasoning.
+
+A stronger form of adaptation occurs when the model recognizes that its original understanding was incomplete or incorrect and changes the underlying problem representation.
+
+The experiment therefore distinguishes between:
+
+**Contextual Tailoring**
+
+> Adjusting recommendations to incorporate new user information.
+
+and
+
+**Diagnostic Reframing**
+
+> Revising the model's understanding of what the actual problem may be.
+
+---
+
+### Testing Controls
+
+To make the comparison as consistent as possible:
+
+- the same initial scenario was used for all three models;
+- the same follow-up context was provided in Round 2;
+- models were tested independently;
+- the initial responses were preserved without editing;
+- no model was shown another model's response;
+- no model was told how the other models had approached the problem;
+- evaluation was based on observable response behavior rather than assumed internal reasoning.
+
+The study does not attempt to inspect or claim access to a model's private chain-of-thought.
+
+Instead, it evaluates externally observable behaviors such as assumptions, clarification questions, recommendations, uncertainty language, evidence use, and changes between Round 1 and Round 2.
+
+
+## 05 Ground Truth & Known Information
+
+Before evaluating the model responses, I separated the information explicitly provided by the user from information that remained unknown.
+
+This establishes an evidence boundary for the evaluation: any claim beyond the known information should be treated as a hypothesis or assumption rather than an established fact.
+
+### Known in Round 1
+
+From the initial request, we know that:
+
+- the user is a ceramic artist;
+- the user has relocated to another country;
+- the user continues creating ceramic work;
+- the user enjoys and remains engaged with their creative practice;
+- the user is dissatisfied with the current development of the ceramics business and sales.
+
+### Unknown in Round 1
+
+The initial request does not tell us:
+
+- what types of ceramic products or artworks are being created;
+- whether sales currently happen online, offline, or through both channels;
+- which country or market the user is operating in;
+- how long ago the relocation occurred;
+- how long the user has been trying to develop the business in the new country;
+- who the target audience is;
+- what price segment the products belong to;
+- how many sales are currently being generated;
+- whether sales were stronger before relocation;
+- how many potential customers currently see the work;
+- whether people see and engage with the products but fail to purchase, or whether the primary problem is lack of visibility;
+- which sales channels already exist, such as a website, Etsy, Instagram, or other platforms;
+- whether paid advertising has already been tested and how it performed;
+- which stage of the customer journey is currently failing.
+
+### Causal Uncertainty
+
+One distinction is particularly important.
+
+The user states that they:
+
+1. moved to another country; and
+2. are struggling to develop the ceramics business and sales.
+
+However, the initial request does not establish that relocation caused the sales problem.
+
+Therefore:
+
+**Relocation = observed context**
+
+**Relocation causing poor sales = unverified hypothesis**
+
+Treating the second statement as established fact would introduce a causal assumption that is not supported by the available evidence.
+
+
+
+## 06 Evaluation Framework
+
+The evaluation framework was developed around observable model behavior rather than the quality of the ceramics business advice itself.
+
+Each model was evaluated across eight dimensions.
+
+| Evaluation Dimension | What It Measures |
+|---|---|
+| Problem Framing | Whether the model attempts to understand the actual problem before defining what needs to be solved. |
+| Assumption Control | Whether the model distinguishes known information from plausible but unverified assumptions. |
+| Clarification Strategy | Whether the model asks diagnostically useful questions, and whether those questions appear before or after recommendations. |
+| Uncertainty Calibration | Whether uncertainty is communicated appropriately instead of presenting hypotheses as established facts. |
+| Premature Solution Control | Whether the model avoids generating detailed solutions before sufficient context is available. |
+| Evidence Discipline | Whether conclusions, causal claims, and quantitative statements are supported by the information available. |
+| Context Adaptation | Whether newly provided facts and user constraints meaningfully change the model's response. |
+| Diagnostic Reframing | Whether the model can revise its original understanding of the problem when new evidence becomes available. |
+
+### Scoring Scale
+
+Each dimension was scored from 1 to 5.
+
+| Score | Interpretation |
+|---|---|
+| 1 | Poor — behavior creates a significant risk of unsupported or misleading conclusions. |
+| 2 | Weak — the capability appears inconsistently or only to a limited degree. |
+| 3 | Moderate — the model demonstrates the capability but with noticeable weaknesses. |
+| 4 | Strong — the behavior is generally reliable with minor limitations. |
+| 5 | Excellent — the model demonstrates the behavior consistently and with strong evidence discipline. |
+
+The evaluation distinguishes between two forms of adaptation:
+
+**Contextual Tailoring** — adjusting recommendations to incorporate new user information.
+
+**Diagnostic Reframing** — changing the underlying understanding of the problem after receiving new evidence.
+
+This distinction is important because a response can become more personalized without the model actually reconsidering its original diagnosis.
