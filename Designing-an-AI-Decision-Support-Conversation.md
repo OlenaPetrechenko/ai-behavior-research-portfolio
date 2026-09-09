@@ -1,4 +1,4 @@
-# Designing an AI Decision-Support Conversation 
+# Designing an AI Decision-Support Conversation
 ![AI Decision-Support Conversation Flow](conversation-flow.png)
 
 ### How should an AI assistant help someone make a high-stakes personal decision without overwhelming them or making the decision for them?
