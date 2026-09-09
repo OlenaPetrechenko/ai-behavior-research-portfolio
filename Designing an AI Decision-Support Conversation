@@ -1,0 +1,327 @@
+# Designing an AI Decision-Support Conversation 
+
+### How should an AI assistant help someone make a high-stakes personal decision without overwhelming them or making the decision for them?
+
+## Overview
+
+This project explores the design of an AI conversation for a user facing a difficult personal decision.
+
+The scenario:
+
+> “I got a great job offer in another country. The salary is much higher than what I earn now. Everyone says I’d be crazy to refuse. But I’ve been staring at the Accept button for three days and can’t click it.”
+
+The goal was not to design an AI that makes the decision for the user.
+
+The goal was to design an assistant that can recognize uncertainty, understand the user's emotional state, reduce cognitive overload, and choose the right type of support as the conversation evolves.
+
+---
+
+## The Design Challenge
+
+High-stakes decisions are rarely just information problems.
+
+A user may simultaneously experience:
+
+- uncertainty about facts
+- assumptions about the future
+- emotional pressure
+- conflicting priorities
+- fear of regret
+- decision fatigue
+
+A conversational assistant that immediately gives advice or continues asking questions can make the experience worse.
+
+The design challenge became:
+
+> How can an AI help the user move forward while preserving their agency?
+
+---
+
+## My Role
+
+**Conversation Designer / Human-AI Interaction Designer**
+
+I focused on:
+
+- user intent
+- conversational behavior
+- clarification strategy
+- emotional and cognitive state
+- context retention
+- decision-support logic
+- conversational UX
+- AI response patterns
+
+---
+
+# Conversation Design Principles
+
+## 01 — Acknowledge Before Action
+
+When a user brings an emotionally significant decision, the AI should first acknowledge the emotional context before moving into advice or problem-solving.
+
+**Pattern**
+
+`Acknowledge → Understand → Help`
+
+---
+
+## 02 — Separate Assumptions From Facts
+
+Users may speak about uncertain future outcomes as if they are facts.
+
+For example:
+
+> “I may never get an opportunity like this again.”
+
+The AI should not reinforce this assumption or immediately argue against it.
+
+Instead, it should distinguish what is known from what is feared or predicted and help the user avoid making the decision based on an unsupported assumption.
+
+The final decision remains with the user.
+
+---
+
+## 03 — Do the Work, Don’t Just Assign It
+
+If the AI can perform part of the reasoning work, it should help rather than give the user homework.
+
+Instead of:
+
+> “Compare rent, taxes, transportation and living costs.”
+
+The assistant can request the necessary information, structure it, calculate the differences, and help the user interpret the result.
+
+`Ask for necessary data → Structure → Calculate → Compare → Interpret`
+
+---
+
+## 04 — Reduce Uncertainty Through Action
+
+When reflection stops producing new information, additional questions can make the user feel even more stuck.
+
+A small, reversible action can move the decision forward by replacing assumptions with real-world evidence.
+
+In this scenario, instead of continuing the Accept vs. Reject discussion, the assistant could suggest a short visit to the new city and company.
+
+`Stuck → Find reversible action → Gather real-world evidence → Reassess`
+
+---
+
+## 05 — Adapt to the User’s State
+
+The assistant should not follow the same conversational pattern regardless of the user's condition.
+
+If the user is engaged, clarification may help.
+
+If the user becomes overwhelmed, more questions and choices can increase cognitive load.
+
+**A good question is not always a good next turn.**
+
+---
+
+## 06 — Use Conversational History
+
+The assistant should use meaningful information from the entire conversation rather than reacting only to the latest message.
+
+This includes not only factual information, but also:
+
+- previous concerns
+- emotional reactions
+- priorities
+- contradictions
+- fears and preferences
+
+The next AI action should be informed by how the conversation has evolved.
+
+---
+
+## 07 — Reduce Pressure Before Continuing
+
+When the user becomes emotionally and cognitively exhausted, the goal of the conversation should temporarily change.
+
+Instead of continuing:
+
+`Decision → Decision → Decision`
+
+the assistant should move to:
+
+`Detect overload → Stop questioning → Reduce pressure → Resume later`
+
+Exhaustion is a user state. It should not automatically be interpreted as a decision.
+
+---
+
+# Conversation Flow
+
+The assistant does not follow one fixed script.
+
+It continuously evaluates:
+
+**What is known?**  
+**What is assumed?**  
+**What is the user's current state?**  
+**Is there enough context to help?**
+
+From there, the assistant chooses an appropriate type of support.
+
+```text
+USER BRINGS A HIGH-STAKES DECISION
+                ↓
+       AI ASSESSES CONTEXT
+                ↓
+     Facts / Assumptions / State
+                ↓
+        Is the user overloaded?
+           ↙            ↘
+         NO              YES
+         ↓                ↓
+ Acknowledge emotion   Reduce pressure
+         ↓             Stop questioning
+ Ask one useful             ↓
+ clarification          Resume later
+         ↓
+      NEW CONTEXT
+         ↓
+ What does the user need?
+         ↓
+ ┌────────────┬────────────┬─────────────┐
+ ↓            ↓            ↓
+Practical    Stuck       Enough context
+unknown      between
+             options
+ ↓            ↓            ↓
+Calculate   Reversible   Recommend
+Compare     action       next step
+Structure   ↓            ↓
+ ↓          Gather       Preserve
+Interpret   evidence     user agency
+ └────────────┴────────────┘
+                ↓
+       OBSERVE USER RESPONSE
+                ↓
+       UPDATE CONTEXT + STATE
+                ↓
+            ADAPT
+
+Key Conversation Moments
+Moment 01 — Don’t Rush Into Problem-Solving
+User
+
+“I got a great job offer in another country, but I can't make myself click Accept.”
+
+Weak AI behavior
+
+Immediately comparing salaries, career opportunities, relocation costs, or telling the user what they should do.
+
+Design decision
+
+The user is already emotionally overwhelmed.
+
+Immediate advice adds cognitive load without understanding the real source of hesitation.
+
+The assistant should first provide emotional support and understand what is making the decision difficult.
+
+Acknowledge → Understand → Help
+
+Moment 02 — Don’t Reinforce an Assumption
+User
+
+“But I may never get an opportunity like this again.”
+
+Weak AI behavior
+
+“Yes, this is a rare opportunity. You shouldn't miss it.”
+
+Why it fails
+
+The user is treating an uncertain future outcome as a fact.
+
+If the AI reinforces that assumption, it increases pressure instead of helping the user think more clearly.
+
+Design decision
+
+Separate facts from assumptions → Reduce pressure → Preserve agency
+
+Moment 03 — Move From Reflection to Action
+
+At some point, the user becomes stuck between:
+
+Accept ↔ Reject
+
+More reflection is no longer producing useful information.
+
+Design decision
+
+Instead of continuing with increasingly abstract questions, introduce a small reversible action.
+
+In this scenario:
+
+Visit the city and company before making the final decision.
+
+This transforms the conversation:
+
+Assumptions → Experience
+
+Imagining → Observing
+
+Stuck → Moving forward
+
+The AI helps the user generate new evidence without making the final decision for them.
+
+Moment 04 — Know When to Stop
+
+Later, the user says:
+
+“I’m exhausted. I don’t feel anything anymore. I open the offer email and close it. I don’t think I’m capable of making a normal decision.”
+
+At this point, even a thoughtful clarification question may create more pressure.
+
+Design decision
+
+Change the immediate objective.
+
+Not:
+
+Help user decide
+
+But:
+
+Help user reduce cognitive and emotional pressure
+
+The assistant stops pushing the decision forward and allows the conversation to pause.
+
+Outcome
+
+The resulting conversation is not a fixed decision tree.
+
+It is an adaptive system in which the AI continuously chooses the appropriate type of support based on:
+
+available evidence
+uncertainty
+conversational history
+user intent
+emotional state
+cognitive load
+
+One of the main insights from the project was:
+
+The quality of an AI response depends not only on what it says, but on whether that type of response is appropriate for the user's current state.
+
+A clarification question can be useful in one moment and overwhelming in another.
+
+A recommendation can be premature early in the conversation but helpful later when enough context has been established.
+
+The assistant therefore needs to adapt its behavior rather than simply generate individually “good” responses.
+
+Skills Demonstrated
+Conversation Design
+Human-AI Interaction
+Conversational UX
+AI Behavior Design
+User Intent Analysis
+Prompt Design
+Context & State Management
+Clarification Strategy
+Decision-Support Design
+AI Evaluation
